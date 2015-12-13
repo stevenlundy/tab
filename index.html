@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+          <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -15,6 +16,119 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <style>
+            body {
+                width: 800px;
+                margin: auto;
+            }
+            .fretboard{
+                width: 100%;
+                background-image: url(img/wood.png);
+            }
+            .fret {
+                border-right: 1px solid gray;
+                height: 20px;
+                display: inline-block;
+            }
+            .fret input {
+                display: none;
+            }
+            .fret span {
+              width: 14px;
+              height: 14px;
+              display: block;
+              margin: 3px auto;
+              -webkit-border-radius: 7px;
+              -moz-border-radius: 7px;
+              border-radius: 7px;
+            }
+            input[type=radio]:checked + span {
+              background-color: rgba(100,0,255,0.5);
+            }
+            .fret:hover span {
+              background-color: rgba(100,0,255,0.2);
+            }
+            .string {
+                height: 20px;
+            }
+            .fret:nth-child(1){
+              width: 60px;
+            }
+            .fret:nth-child(2){
+              width: 55px; /* 60/(1.095)^(n-1) */
+            }
+            .fret:nth-child(3){
+              width: 50px;
+            }
+            .fret:nth-child(4){
+              width: 46px;
+            }
+            .fret:nth-child(5){
+              width: 42px;
+            }
+            .fret:nth-child(6){
+              width: 38px;
+            }
+            .fret:nth-child(7){
+              width: 35px;
+            }
+            .fret:nth-child(8){
+              width: 32px;
+            }
+            .fret:nth-child(9){
+              width: 29px;
+            }
+            .fret:nth-child(10){
+              width: 27px;
+            }
+            .fret:nth-child(11){
+              width: 24px;
+            }
+            .fret:nth-child(12){
+              width: 22px;
+            }
+            .fret:nth-child(13){
+              width: 20px;
+            }
+            .fret:nth-child(14){
+              width: 18px;
+            }
+            .fret:nth-child(15){
+              width: 17px;
+            }
+            .fret:nth-child(16){
+              width: 16px;
+            }
+            .fret:nth-child(17){
+              width: 15px;
+            }
+            .fret:nth-child(18){
+              width: 15px;
+            }
+            .tab pre {
+                display: inline-block;
+            }
+            .chord:hover {
+                background-color: #fe8;
+                cursor: pointer;
+            }
+            .chord.selected {
+                background-color: red;
+            }
+            #edit-area {
+                width: 10px;
+                height: 110px;
+               overflow: hidden;
+                resize: none;
+            }
+            #tab-input-output {
+                height: 110px;
+                width: 800px;
+            }
+            textarea {
+                font-family: courier, monospace;
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,19 +136,203 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="fretboard">
+            <div class="string" >
+              <!--(label[for="fret_1_$"].fret>input[type="radio"][value="$"][name="string_1"]#fret_1_$+span)*18-->
+              <label for="fret_1_1" class="fret"><input type="radio" value="1" name="string_1" id="fret_1_1"><span></span></label>
+              <label for="fret_1_2" class="fret"><input type="radio" value="2" name="string_1" id="fret_1_2"><span></span></label>
+              <label for="fret_1_3" class="fret"><input type="radio" value="3" name="string_1" id="fret_1_3"><span></span></label>
+              <label for="fret_1_4" class="fret"><input type="radio" value="4" name="string_1" id="fret_1_4"><span></span></label>
+              <label for="fret_1_5" class="fret"><input type="radio" value="5" name="string_1" id="fret_1_5"><span></span></label>
+              <label for="fret_1_6" class="fret"><input type="radio" value="6" name="string_1" id="fret_1_6"><span></span></label>
+              <label for="fret_1_7" class="fret"><input type="radio" value="7" name="string_1" id="fret_1_7"><span></span></label>
+              <label for="fret_1_8" class="fret"><input type="radio" value="8" name="string_1" id="fret_1_8"><span></span></label>
+              <label for="fret_1_9" class="fret"><input type="radio" value="9" name="string_1" id="fret_1_9"><span></span></label>
+              <label for="fret_1_10" class="fret"><input type="radio" value="10" name="string_1" id="fret_1_10"><span></span></label>
+              <label for="fret_1_11" class="fret"><input type="radio" value="11" name="string_1" id="fret_1_11"><span></span></label>
+              <label for="fret_1_12" class="fret"><input type="radio" value="12" name="string_1" id="fret_1_12"><span></span></label>
+              <label for="fret_1_13" class="fret"><input type="radio" value="13" name="string_1" id="fret_1_13"><span></span></label>
+              <label for="fret_1_14" class="fret"><input type="radio" value="14" name="string_1" id="fret_1_14"><span></span></label>
+              <label for="fret_1_15" class="fret"><input type="radio" value="15" name="string_1" id="fret_1_15"><span></span></label>
+              <label for="fret_1_16" class="fret"><input type="radio" value="16" name="string_1" id="fret_1_16"><span></span></label>
+              <label for="fret_1_17" class="fret"><input type="radio" value="17" name="string_1" id="fret_1_17"><span></span></label>
+              <label for="fret_1_18" class="fret"><input type="radio" value="18" name="string_1" id="fret_1_18"><span></span></label>
+            </div>
+                        <div class="string" >
+                          <label for="fret_2_1" class="fret"><input type="radio" value="1" name="string_2" id="fret_2_1"><span></span></label>
+                          <label for="fret_2_2" class="fret"><input type="radio" value="2" name="string_2" id="fret_2_2"><span></span></label>
+                          <label for="fret_2_3" class="fret"><input type="radio" value="3" name="string_2" id="fret_2_3"><span></span></label>
+                          <label for="fret_2_4" class="fret"><input type="radio" value="4" name="string_2" id="fret_2_4"><span></span></label>
+                          <label for="fret_2_5" class="fret"><input type="radio" value="5" name="string_2" id="fret_2_5"><span></span></label>
+                          <label for="fret_2_6" class="fret"><input type="radio" value="6" name="string_2" id="fret_2_6"><span></span></label>
+                          <label for="fret_2_7" class="fret"><input type="radio" value="7" name="string_2" id="fret_2_7"><span></span></label>
+                          <label for="fret_2_8" class="fret"><input type="radio" value="8" name="string_2" id="fret_2_8"><span></span></label>
+                          <label for="fret_2_9" class="fret"><input type="radio" value="9" name="string_2" id="fret_2_9"><span></span></label>
+                          <label for="fret_2_10" class="fret"><input type="radio" value="10" name="string_2" id="fret_2_10"><span></span></label>
+                          <label for="fret_2_11" class="fret"><input type="radio" value="11" name="string_2" id="fret_2_11"><span></span></label>
+                          <label for="fret_2_12" class="fret"><input type="radio" value="12" name="string_2" id="fret_2_12"><span></span></label>
+                          <label for="fret_2_13" class="fret"><input type="radio" value="13" name="string_2" id="fret_2_13"><span></span></label>
+                          <label for="fret_2_14" class="fret"><input type="radio" value="14" name="string_2" id="fret_2_14"><span></span></label>
+                          <label for="fret_2_15" class="fret"><input type="radio" value="15" name="string_2" id="fret_2_15"><span></span></label>
+                          <label for="fret_2_16" class="fret"><input type="radio" value="16" name="string_2" id="fret_2_16"><span></span></label>
+                          <label for="fret_2_17" class="fret"><input type="radio" value="17" name="string_2" id="fret_2_17"><span></span></label>
+                          <label for="fret_2_18" class="fret"><input type="radio" value="18" name="string_2" id="fret_2_18"><span></span></label>
+            </div>
+                        <div class="string" >
+                          <label for="fret_3_1" class="fret"><input type="radio" value="1" name="string_3" id="fret_3_1"><span></span></label>
+                          <label for="fret_3_2" class="fret"><input type="radio" value="2" name="string_3" id="fret_3_2"><span></span></label>
+                          <label for="fret_3_3" class="fret"><input type="radio" value="3" name="string_3" id="fret_3_3"><span></span></label>
+                          <label for="fret_3_4" class="fret"><input type="radio" value="4" name="string_3" id="fret_3_4"><span></span></label>
+                          <label for="fret_3_5" class="fret"><input type="radio" value="5" name="string_3" id="fret_3_5"><span></span></label>
+                          <label for="fret_3_6" class="fret"><input type="radio" value="6" name="string_3" id="fret_3_6"><span></span></label>
+                          <label for="fret_3_7" class="fret"><input type="radio" value="7" name="string_3" id="fret_3_7"><span></span></label>
+                          <label for="fret_3_8" class="fret"><input type="radio" value="8" name="string_3" id="fret_3_8"><span></span></label>
+                          <label for="fret_3_9" class="fret"><input type="radio" value="9" name="string_3" id="fret_3_9"><span></span></label>
+                          <label for="fret_3_10" class="fret"><input type="radio" value="10" name="string_3" id="fret_3_10"><span></span></label>
+                          <label for="fret_3_11" class="fret"><input type="radio" value="11" name="string_3" id="fret_3_11"><span></span></label>
+                          <label for="fret_3_12" class="fret"><input type="radio" value="12" name="string_3" id="fret_3_12"><span></span></label>
+                          <label for="fret_3_13" class="fret"><input type="radio" value="13" name="string_3" id="fret_3_13"><span></span></label>
+                          <label for="fret_3_14" class="fret"><input type="radio" value="14" name="string_3" id="fret_3_14"><span></span></label>
+                          <label for="fret_3_15" class="fret"><input type="radio" value="15" name="string_3" id="fret_3_15"><span></span></label>
+                          <label for="fret_3_16" class="fret"><input type="radio" value="16" name="string_3" id="fret_3_16"><span></span></label>
+                          <label for="fret_3_17" class="fret"><input type="radio" value="17" name="string_3" id="fret_3_17"><span></span></label>
+                          <label for="fret_3_18" class="fret"><input type="radio" value="18" name="string_3" id="fret_3_18"><span></span></label>
+            </div>
+                        <div class="string" >
+                          <label for="fret_4_1" class="fret"><input type="radio" value="1" name="string_4" id="fret_4_1"><span></span></label>
+                          <label for="fret_4_2" class="fret"><input type="radio" value="2" name="string_4" id="fret_4_2"><span></span></label>
+                          <label for="fret_4_3" class="fret"><input type="radio" value="3" name="string_4" id="fret_4_3"><span></span></label>
+                          <label for="fret_4_4" class="fret"><input type="radio" value="4" name="string_4" id="fret_4_4"><span></span></label>
+                          <label for="fret_4_5" class="fret"><input type="radio" value="5" name="string_4" id="fret_4_5"><span></span></label>
+                          <label for="fret_4_6" class="fret"><input type="radio" value="6" name="string_4" id="fret_4_6"><span></span></label>
+                          <label for="fret_4_7" class="fret"><input type="radio" value="7" name="string_4" id="fret_4_7"><span></span></label>
+                          <label for="fret_4_8" class="fret"><input type="radio" value="8" name="string_4" id="fret_4_8"><span></span></label>
+                          <label for="fret_4_9" class="fret"><input type="radio" value="9" name="string_4" id="fret_4_9"><span></span></label>
+                          <label for="fret_4_10" class="fret"><input type="radio" value="10" name="string_4" id="fret_4_10"><span></span></label>
+                          <label for="fret_4_11" class="fret"><input type="radio" value="11" name="string_4" id="fret_4_11"><span></span></label>
+                          <label for="fret_4_12" class="fret"><input type="radio" value="12" name="string_4" id="fret_4_12"><span></span></label>
+                          <label for="fret_4_13" class="fret"><input type="radio" value="13" name="string_4" id="fret_4_13"><span></span></label>
+                          <label for="fret_4_14" class="fret"><input type="radio" value="14" name="string_4" id="fret_4_14"><span></span></label>
+                          <label for="fret_4_15" class="fret"><input type="radio" value="15" name="string_4" id="fret_4_15"><span></span></label>
+                          <label for="fret_4_16" class="fret"><input type="radio" value="16" name="string_4" id="fret_4_16"><span></span></label>
+                          <label for="fret_4_17" class="fret"><input type="radio" value="17" name="string_4" id="fret_4_17"><span></span></label>
+                          <label for="fret_4_18" class="fret"><input type="radio" value="18" name="string_4" id="fret_4_18"><span></span></label>
+            </div>
+                        <div class="string" >
+                          <label for="fret_5_1" class="fret"><input type="radio" value="1" name="string_5" id="fret_5_1"><span></span></label>
+                          <label for="fret_5_2" class="fret"><input type="radio" value="2" name="string_5" id="fret_5_2"><span></span></label>
+                          <label for="fret_5_3" class="fret"><input type="radio" value="3" name="string_5" id="fret_5_3"><span></span></label>
+                          <label for="fret_5_4" class="fret"><input type="radio" value="4" name="string_5" id="fret_5_4"><span></span></label>
+                          <label for="fret_5_5" class="fret"><input type="radio" value="5" name="string_5" id="fret_5_5"><span></span></label>
+                          <label for="fret_5_6" class="fret"><input type="radio" value="6" name="string_5" id="fret_5_6"><span></span></label>
+                          <label for="fret_5_7" class="fret"><input type="radio" value="7" name="string_5" id="fret_5_7"><span></span></label>
+                          <label for="fret_5_8" class="fret"><input type="radio" value="8" name="string_5" id="fret_5_8"><span></span></label>
+                          <label for="fret_5_9" class="fret"><input type="radio" value="9" name="string_5" id="fret_5_9"><span></span></label>
+                          <label for="fret_5_10" class="fret"><input type="radio" value="10" name="string_5" id="fret_5_10"><span></span></label>
+                          <label for="fret_5_11" class="fret"><input type="radio" value="11" name="string_5" id="fret_5_11"><span></span></label>
+                          <label for="fret_5_12" class="fret"><input type="radio" value="12" name="string_5" id="fret_5_12"><span></span></label>
+                          <label for="fret_5_13" class="fret"><input type="radio" value="13" name="string_5" id="fret_5_13"><span></span></label>
+                          <label for="fret_5_14" class="fret"><input type="radio" value="14" name="string_5" id="fret_5_14"><span></span></label>
+                          <label for="fret_5_15" class="fret"><input type="radio" value="15" name="string_5" id="fret_5_15"><span></span></label>
+                          <label for="fret_5_16" class="fret"><input type="radio" value="16" name="string_5" id="fret_5_16"><span></span></label>
+                          <label for="fret_5_17" class="fret"><input type="radio" value="17" name="string_5" id="fret_5_17"><span></span></label>
+                          <label for="fret_5_18" class="fret"><input type="radio" value="18" name="string_5" id="fret_5_18"><span></span></label>
+            </div>
+            <div class="string" >
+              <label for="fret_6_1" class="fret"><input type="radio" value="1" name="string_6" id="fret_6_1"><span></span></label>
+              <label for="fret_6_2" class="fret"><input type="radio" value="2" name="string_6" id="fret_6_2"><span></span></label>
+              <label for="fret_6_3" class="fret"><input type="radio" value="3" name="string_6" id="fret_6_3"><span></span></label>
+              <label for="fret_6_4" class="fret"><input type="radio" value="4" name="string_6" id="fret_6_4"><span></span></label>
+              <label for="fret_6_5" class="fret"><input type="radio" value="5" name="string_6" id="fret_6_5"><span></span></label>
+              <label for="fret_6_6" class="fret"><input type="radio" value="6" name="string_6" id="fret_6_6"><span></span></label>
+              <label for="fret_6_7" class="fret"><input type="radio" value="7" name="string_6" id="fret_6_7"><span></span></label>
+              <label for="fret_6_8" class="fret"><input type="radio" value="8" name="string_6" id="fret_6_8"><span></span></label>
+              <label for="fret_6_9" class="fret"><input type="radio" value="9" name="string_6" id="fret_6_9"><span></span></label>
+              <label for="fret_6_10" class="fret"><input type="radio" value="10" name="string_6" id="fret_6_10"><span></span></label>
+              <label for="fret_6_11" class="fret"><input type="radio" value="11" name="string_6" id="fret_6_11"><span></span></label>
+              <label for="fret_6_12" class="fret"><input type="radio" value="12" name="string_6" id="fret_6_12"><span></span></label>
+              <label for="fret_6_13" class="fret"><input type="radio" value="13" name="string_6" id="fret_6_13"><span></span></label>
+              <label for="fret_6_14" class="fret"><input type="radio" value="14" name="string_6" id="fret_6_14"><span></span></label>
+              <label for="fret_6_15" class="fret"><input type="radio" value="15" name="string_6" id="fret_6_15"><span></span></label>
+              <label for="fret_6_16" class="fret"><input type="radio" value="16" name="string_6" id="fret_6_16"><span></span></label>
+              <label for="fret_6_17" class="fret"><input type="radio" value="17" name="string_6" id="fret_6_17"><span></span></label>
+              <label for="fret_6_18" class="fret"><input type="radio" value="18" name="string_6" id="fret_6_18"><span></span></label>
+            </div>
+        </div>
+        <textarea id="edit-area"></textarea>
+        <div class="tab">
+        </div>
+        <textarea id="tab-input-output"></textarea>
+        <br>
+        <button id="import">
+            Import Tab
+        </button>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            $( document ).ready(function() {
+                var tab = ""
+                var strings = ["e","B","G","D","A","E"];
+                for(var i=0; i<6; i++){
+                    tab += strings[i]+"|";
+                    for(var j=0; j<80; j++){
+                        tab += "-";
+                    }
+                    if (i!== 5){
+                        tab += "\n";
+                    }
+                }
+                console.log(tab);
+                importTab(tab);
+            });
+            $('#import').click(function(){
+                var tab = $('#tab-input-output').val();
+                importTab(tab);
+            });
+            function importTab(tab){
+                var strings = tab.split("\n");
+                var chords = [];
+                var longestString = 0;
+                
+                //find longest part of tab
+                for(var i=0; i<6; i++){
+                    if(strings[i].length > longestString){
+                        longestString = strings[i].length;
+                    }
+                }
+                //initialize chord array
+                for(i=0; i<longestString; i++){
+                    chords[i] = "";
+                }
+                //build chords
+                for(var i=0; i<6; i++){
+                    for(var j=0; j<strings[i].length; j++){
+                        chords[j] += strings[i][j];
+                        if (i!== 5){
+                            chords[j]+= "\n";
+                        }
+                    }
+                }
+                //put chords into html
+                $('.tab').empty();
+                $('.tab').append('<pre class="string-label">'+chords[0]+'</pre>');
+                $('.tab').append('<pre class="nut">'+chords[1]+'</pre>');
+                for(var i = 2; i< chords.length; i++){
+                    $('.tab').append('<pre class="chord">'+chords[i]+'</pre>');
+                }
+                //add event listener
+                $('.chord').click(function(evt){
+                    if (!evt.ctrlKey) {
+                        $('.chord').removeClass("selected");
+                    }
+                    $( this ).toggleClass("selected");
+                    var strings = $(this).html();
+                    $("#edit-area").html(strings);
+                });
+            }
         </script>
     </body>
 </html>
